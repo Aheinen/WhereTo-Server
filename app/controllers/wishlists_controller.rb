@@ -9,7 +9,7 @@ class WishlistsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    events = @user.wishlists.where(accepted: true)
+    events = Event.where(id: @user.wishlists.where(accepted: true).map{|item| item.event_id})
     render json: {user: @user, events: events}
   end
 

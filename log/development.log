@@ -13991,3 +13991,13 @@ Processing by WishlistsController#index as HTML
   [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
   [1m[36mWishlist Load (0.5ms)[0m  [1mSELECT "wishlists".* FROM "wishlists"  WHERE "wishlists"."user_id" = $1 AND "wishlists"."accepted" = 't'[0m  [["user_id", 2]]
 Completed 200 OK in 66ms (Views: 11.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/users/2/wishlist" for 127.0.0.1 at 2015-06-23 10:17:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by WishlistsController#index as HTML
+  Parameters: {"user_id"=>"2"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 2]]
+  [1m[36mWishlist Load (0.5ms)[0m  [1mSELECT "wishlists".* FROM "wishlists"  WHERE "wishlists"."user_id" = $1 AND "wishlists"."accepted" = 't'[0m  [["user_id", 2]]
+  [1m[35mEvent Load (13.8ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."id" IN (1, 4, 6, 9)
+Completed 200 OK in 113ms (Views: 12.4ms | ActiveRecord: 21.5ms)
