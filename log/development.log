@@ -14001,3 +14001,58 @@ Processing by WishlistsController#index as HTML
   [1m[36mWishlist Load (0.5ms)[0m  [1mSELECT "wishlists".* FROM "wishlists"  WHERE "wishlists"."user_id" = $1 AND "wishlists"."accepted" = 't'[0m  [["user_id", 2]]
   [1m[35mEvent Load (13.8ms)[0m  SELECT "events".* FROM "events"  WHERE "events"."id" IN (1, 4, 6, 9)
 Completed 200 OK in 113ms (Views: 12.4ms | ActiveRecord: 21.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2015-06-23 10:49:43 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (16.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EventsController#index as HTML
+Completed 404 Not Found in 45ms
+
+ActiveRecord::RecordNotFound (Couldn't find User without an ID):
+  app/controllers/events_controller.rb:4:in `index'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.8ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (58.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2015-06-23 10:50:29 -0700
+Processing by UsersController#create as */*
+  Parameters: {"first_name"=>"Fernanda", "last_name"=>"Marques", "email"=>"f.martins.marques@gmail.com", "image"=>"https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc3/v/t1.0-1/s100x100/579101_600986093299443_961889081_n.jpg?oh=7ed28a4d7c09bc5bbdd497e899b1421b&oe=5628F884&__gda__=1445196540_a1b42ef98c94df66f5beb32912200900"}
+  [1m[35mUser Load (240.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."email" = 'f.martins.marques@gmail.com' LIMIT 1
+Redirected to http://localhost:3000/users/2/events
+Completed 302 Found in 312ms (ActiveRecord: 241.6ms)
+
+
+Started OPTIONS "/users/2/events" for 127.0.0.1 at 2015-06-23 10:50:29 -0700
+
+ActionController::RoutingError (No route matches [OPTIONS] "/users/2/events"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.5) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.5) lib/rack/lock.rb:17:in `call'
+  rack (1.5.5) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.5) lib/rack/handler/webrick.rb:60:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:138:in `service'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/httpserver.rb:94:in `run'
+  /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/2.0.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (42.6ms)
+  Rendered /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (107.1ms)
