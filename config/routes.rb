@@ -12,7 +12,9 @@ Rails.application.routes.draw do
   match '/users/:id' => 'users#render_204', via: [:options]
   # Access All Categories
   # get '/categories' => 'users#categories'
-  # get '/events' => 'events#all'
+
+  # Access Specific Category (DONT COMMENT/REMOVE!)
+  get '/events/:id' => 'events#show'
 
   # You can have the root of your site routed with "root"
 
