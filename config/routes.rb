@@ -4,16 +4,15 @@ Rails.application.routes.draw do
   resources :users, only: [:create, :edit] do
     resources :interests, only: [:create]
     resources :events, only: [:index] do
-      get '/events/list' => 'events#list'
       resources :wishlists, only: [:create]
     end
   end
 
-
+  get '/users/:user_id/events/list' => 'events#list'
   match '/users/:id' => 'users#render_204', via: [:options]
   # Access All Categories
-  get '/categories' => 'users#categories'
-  get '/events' => 'events#all'
+  # get '/categories' => 'users#categories'
+  # get '/events' => 'events#all'
 
   # You can have the root of your site routed with "root"
 
