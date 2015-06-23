@@ -20,6 +20,8 @@ gem 'dotenv-rails', :groups => [:development, :test]
 # To use Jbuilder templates for JSON
 gem 'jbuilder'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
