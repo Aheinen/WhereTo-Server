@@ -7,7 +7,7 @@ Rails.application.routes.draw do
       resources :wishlists, only: [:create]
     end
   end
-
+  get '/users/:user_id/wishlist' => 'wishlists#index'
   get '/users/:user_id/events/list' => 'events#list'
   match '/users/:id' => 'users#render_204', via: [:options]
   # Access All Categories

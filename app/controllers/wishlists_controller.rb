@@ -7,6 +7,12 @@ class WishlistsController < ApplicationController
     redirect_to user_events_path(@user)
   end
 
+  def index
+    @user = User.find(params[:user_id])
+    events = @user.wishlists.where(accepted: true)
+    render json: {user: @user, events: events}
+  end
+
   private
   def to_boolean(str)
     str == 'true'
