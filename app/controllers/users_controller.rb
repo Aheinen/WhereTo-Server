@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   # Edit preferences
   def edit
     get_user
-    interests = @user.interests
+    @interests = @user.interests
     @categories = Category.all
     render 'edit.json.jbuilder'
   end
