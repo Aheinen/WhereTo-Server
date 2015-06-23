@@ -22,6 +22,8 @@ gem 'jbuilder'
 
 gem 'rack-cors', :require => 'rack/cors'
 
+gem 'firebase'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
