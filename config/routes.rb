@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   get '/users/:user_id/wishlist' => 'wishlists#index'
   get '/users/:user_id/events/list' => 'events#list'
-  match '/users/:id' => 'users#render_204', via: [:options]
+  match '*' => 'users#render_204', via: [:options]
   # Access All Categories
   # get '/categories' => 'users#categories'
 
