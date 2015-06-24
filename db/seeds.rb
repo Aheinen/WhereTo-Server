@@ -75,11 +75,10 @@ sample_cats.each do |c|
         event["performers"].each {|k,v| description = description + " " + v["short_bio"] }
       end
     end
-    if event['image']
-      image = event['image']['medium']['url']
-      image.gsub!(/medium/, "block250")
-    end
-
+    # if event['image']
+    #   image = event['image']['medium']['url']
+    #   image.gsub!(/medium/, "block250")
+    image = "../img/stock_imgs/#{c}#{[1,2,3].sample}.jpg"
 
     event = Event.new(name: name, city: city, description: description, venue: venue, price: price, free: free, start_time: starttime, end_time: endtime, performer: performer, image: image)
 
