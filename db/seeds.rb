@@ -54,7 +54,11 @@ sample_cats.each do |c|
     description = event["description"]
     venue = event["venue_name"]
     price = event["price"]
-    starttime = event["start_time"]
+
+    require 'date'
+    t = DateTime.parse(event["start_time"])
+    starttime = t.strftime("%B %d, %Y at %I:%M%p")
+
     endtime = event["stop_time"]
     perf = []
     if event["performers"] && !event["performers"].nil?
