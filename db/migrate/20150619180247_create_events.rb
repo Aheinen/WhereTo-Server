@@ -8,7 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :price
       t.string :image
       t.boolean :free
-      t.datetime :start_time
+      t.string :start_time
       t.datetime :end_time
       t.string :performer
 
